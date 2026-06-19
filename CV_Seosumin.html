@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumin Seo — CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F6F3;
+      --surface: #FFFFFF;
+      --text: #1A1A1A;
+      --muted: #6B6B6B;
+      --accent: #1C4B8C;
+      --accent-light: #E8EFF8;
+      --rule: #DEDBD5;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 15px;
+      padding: 48px 24px 80px;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 24px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--text);
+      margin-bottom: 36px;
+    }
+
+    header h1 {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover { text-decoration: underline; }
+
+    /* ── Objective ── */
+    .objective {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: #2a3f60;
+      line-height: 1.7;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── Entry ── */
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4px 16px;
+      margin-bottom: 22px;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-title {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      grid-column: 1;
+    }
+
+    .entry-org {
+      font-size: 14px;
+      color: var(--muted);
+      grid-column: 1;
+    }
+
+    .entry-date {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+      grid-column: 2;
+      grid-row: 1 / 3;
+      align-self: start;
+      padding-top: 2px;
+    }
+
+    .entry ul {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .entry ul li {
+      margin-bottom: 4px;
+      line-height: 1.6;
+    }
+
+    /* ── Education special ── */
+    .edu-gpa {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .coursework {
+      grid-column: 1 / -1;
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .coursework span {
+      font-weight: 500;
+      color: #444;
+    }
+
+    /* ── Skills grid ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 12px 14px;
+    }
+
+    .skill-card .skill-cat {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .skill-card p {
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ── Honors ── */
+    .honor-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 14px;
+    }
+
+    .honor-row:last-child { border-bottom: none; }
+
+    .honor-name { font-weight: 500; }
+    .honor-meta { font-size: 13px; color: var(--muted); text-align: right; }
+
+    /* ── Certs & Lang ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 40px;
+    }
+
+    .cert-item, .lang-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 14px;
+    }
+
+    .cert-item:last-child, .lang-item:last-child { border-bottom: none; }
+
+    .cert-date { color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 560px) {
+      header { grid-template-columns: 1fr; }
+      .contact { text-align: left; }
+      header h1 { font-size: 2rem; }
+      .entry { grid-template-columns: 1fr; }
+      .entry-date { grid-row: auto; grid-column: 1; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header>
+    <h1>Sumin Seo</h1>
+    <div class="contact">
+      +82-10-4793-5649<br>
+      <a href="mailto:pandamin52@naver.com">pandamin52@naver.com</a><br>
+      Suwon, South Korea
+    </div>
+  </header>
+
+  <!-- Objective -->
+  <div class="objective">
+    Chemical engineering student with hands-on experience in semiconductor device fabrication and PLC data analysis. Focused on bridging industrial control systems with machine learning to build anomaly detection, fault diagnosis, and predictive maintenance solutions for smart factory environments.
+  </div>
+
+  <!-- Experience -->
+  <section>
+    <div class="section-label">Experience</div>
+
+    <div class="entry">
+      <div class="entry-title">Research Intern</div>
+      <div class="entry-date">Dec 2025 – Feb 2026</div>
+      <div class="entry-org">Seoul National University</div>
+      <ul>
+        <li>Fabricated MoS₂ FET devices via hypotaxy-based processes — wafer cleaning, metal deposition, graphene transfer, and plasma treatment</li>
+        <li>Performed contact engineering through graphene transfer to improve device integration</li>
+        <li>Characterized device performance via transfer and output I-V measurements; verified single-crystal structure using TEM analysis</li>
+        <li>Observed measurable improvements in channel performance and overall electrical characteristics</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <div class="section-label">Education</div>
+
+    <div class="entry">
+      <div class="entry-title">B.S. in Chemical Engineering <span class="edu-gpa">— GPA 4.33 / 4.5</span></div>
+      <div class="entry-date">Mar 2022 – Feb 2027</div>
+      <div class="entry-org">Sungkyunkwan University</div>
+      <div class="coursework">
+        <span>Relevant coursework:</span> Reaction Engineering · Chemical Engineering Thermodynamics · Semiconductor Chemical Engineering · Process Control and Design · Smart Factory Capstone Design
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <div class="section-label">Projects</div>
+
+    <div class="entry">
+      <div class="entry-title">PLC Data-Based Anomaly Detection & Predictive Maintenance</div>
+      <div class="entry-date">Mar 2026 – Present</div>
+      <div class="entry-org">Sungkyunkwan University — Smart Factory Capstone</div>
+      <ul>
+        <li>Building an anomaly detection system from PLC operational data, analyzing time-series signals such as cycle time, air pressure, and alarm codes</li>
+        <li>Applying time-series analysis methods to identify abnormal patterns and designing a fault cause analysis framework</li>
+        <li>Interpreting PLC control logic using Mitsubishi GX Works2 to support data-driven maintenance decisions</li>
+        <li>Targeting reduced reliance on experience-based maintenance and improved equipment reliability through predictive analysis</li>
+        <li>Contributing to a PLC–AI integrated framework aimed at practical smart factory deployment</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-cat">Programming</div>
+        <p>Python, MATLAB</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Data & ML</div>
+        <p>Time-series analysis, Anomaly detection, Regression (CSTR dynamic modeling)</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Industrial / PLC</div>
+        <p>Mitsubishi GX Works2, PLC data analysis</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Semiconductor</div>
+        <p>Lithography, Deposition, Device characterization</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Tools</div>
+        <p>Excel, Git</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honors -->
+  <section>
+    <div class="section-label">Honors & Awards</div>
+    <div class="honor-row">
+      <span class="honor-name">Academic Excellence Scholarship — Highest Distinction</span>
+      <span class="honor-meta">Sungkyunkwan University · Sep 2022</span>
+    </div>
+    <div class="honor-row">
+      <span class="honor-name">Academic Excellence Scholarship</span>
+      <span class="honor-meta">Sungkyunkwan University · Sep 2025</span>
+    </div>
+  </section>
+
+  <!-- Certifications + Leadership -->
+  <section>
+    <div class="section-label">Certifications</div>
+    <div class="cert-item">
+      <span>Computer Specialist in Spreadsheet &amp; Database (Level 2)</span>
+      <span class="cert-date">Jul 2024</span>
+    </div>
+    <div class="cert-item">
+      <span>OPIc IH (Intermediate High)</span>
+      <span class="cert-date">Sep 2025</span>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section>
+    <div class="section-label">Leadership</div>
+
+    <div class="entry">
+      <div class="entry-title">Music Director — Gukak Club</div>
+      <div class="entry-date">Mar – Jun 2024</div>
+      <div class="entry-org">Sungkyunkwan University</div>
+      <ul>
+        <li>Led weekly rehearsals and musical coordination; managed end-to-end performance preparation</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-title">Event Organizer & MC — Student Council MT</div>
+      <div class="entry-date">2024</div>
+      <div class="entry-org">Sungkyunkwan University</div>
+      <ul>
+        <li>Planned and executed the full event program; hosted recreation sessions as MC</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Additional -->
+  <section>
+    <div class="section-label">Additional</div>
+    <div class="honor-row">
+      <span class="honor-name">Languages</span>
+      <span class="honor-meta">Korean (Native) · English (OPIc IH)</span>
+    </div>
+    <div class="honor-row">
+      <span class="honor-name">Interests</span>
+      <span class="honor-meta">Semiconductor Process Engineering · Data Analysis · Badminton</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
